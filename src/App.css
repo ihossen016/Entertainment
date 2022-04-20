@@ -1,0 +1,11 @@
+.App {
+  min-height: 100vh;
+  background-color: #39445a;
+  color: white;
+  padding: 130px 0 70px 0;
+}
+@media (max-width: 700px) {
+  .App {
+    padding-top: 70px;
+  }
+}
