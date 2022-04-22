@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@100&family=Redressed&display=swap");
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 /* base styles */
 body {

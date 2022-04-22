@@ -8,6 +8,7 @@ import {
   unavailable,
   unavailableLandscape,
 } from "../../config/config";
+import Carousel from "./Carousel/Carousel";
 
 // MUI
 import { makeStyles } from "@material-ui/core/styles";
@@ -130,7 +131,9 @@ export default function ContentModal({ children, media_type, id }) {
                     {content.overview}
                   </span>
 
-                  <div></div>
+                  <div>
+                    <Carousel id={id} media_type={media_type} />
+                  </div>
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}
