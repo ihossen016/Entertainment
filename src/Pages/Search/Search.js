@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+// Style
 import "./Search.css";
 
 // Components
@@ -27,8 +29,10 @@ const Search = () => {
           process.env.REACT_APP_API_KEY
         }&language=en-US&query=${searchText}&page=${page}&include_adult=false`
       );
+
       setContent(data.results);
       setNumOfPages(data.total_pages);
+
       // console.log(data);
     } catch (error) {
       console.error(error);
@@ -75,6 +79,15 @@ const Search = () => {
         <Tab style={{ width: "50%" }} label="Search Movies" />
         <Tab style={{ width: "50%" }} label="Search TV Series" />
       </Tabs>
+
+      {searchText &&
+        !content &&
+        (type ? (
+          <h2 className="pageTitle">No Series Found</h2>
+        ) : (
+          <h2 className="pageTitle">No Movies Found</h2>
+        ))}
+
       <div className="trending">
         {content &&
           content.map(c => (
@@ -88,9 +101,6 @@ const Search = () => {
               vote_average={c.vote_average}
             />
           ))}
-        {searchText &&
-          !content &&
-          (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
       </div>
       {numOfPages > 1 && (
         <CustomPagination setPage={setPage} numOfPages={numOfPages} />
