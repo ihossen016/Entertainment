@@ -6,4 +6,4 @@
 
 ## **Screenshots**
 
-![Home](screenshots/s1.png)
+![Home](https://github.com/ihossen016/Entertainment/blob/main/public/screenshots/s1.png)
